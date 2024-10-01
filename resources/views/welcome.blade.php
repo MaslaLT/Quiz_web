@@ -7,23 +7,21 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        @vite(['resources/js/app.js', 'resources/sass/app.scss'])
     </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
+    <body>
         <header>
             @if (Route::has('login'))
-                <nav class="-mx-3 flex flex-1 justify-end">
+                <nav>
                     @auth
                         <a
                             href="{{ url('/dashboard') }}"
-                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                         >
                             Dashboard
                         </a>
                     @else
                         <a
                             href="{{ route('login') }}"
-                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                         >
                             Log in
                         </a>
@@ -31,7 +29,6 @@
                         @if (Route::has('register'))
                             <a
                                 href="{{ route('register') }}"
-                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                             >
                                 Register
                             </a>
@@ -45,6 +42,30 @@
             <div class="alert alert-primary" role="alert">
                 A simple primary alert—check it out!
             </div>
+            <!-- Button to open the modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </button>
+
+            <!-- Modal structure -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Modal content goes here...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </main>
 
         <footer class="py-16 text-center text-sm text-black dark:text-white/70">
