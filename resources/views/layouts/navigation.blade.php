@@ -20,7 +20,10 @@
                         <button type="submit" class="btn btn-warning ms-3">Logout</button>
                     </form>
                 @else
-                    <a class="btn btn-outline-info" type="submit" href="{{ route('login') }}">
+                    <a class="btn btn-outline-info" type="submit" href="{{ url('/') }}">
+                        Home Screen
+                    </a>
+                    <a class="ms-3 btn btn-outline-info" type="submit" href="{{ route('login') }}">
                         Log in
                     </a>
                 @endauth

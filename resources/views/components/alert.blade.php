@@ -1,3 +1,8 @@
+@if(session('success'))
+    <li class="alert alert-success">
+        {{ session('success') }}
+    </li>
+@endif
 @if ($errors->any())
     <div class="alert alert-warning">
         <ul>
