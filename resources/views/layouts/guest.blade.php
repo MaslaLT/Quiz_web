@@ -7,9 +7,13 @@
     <title>Quiz</title>
 
     @vite(['resources/js/app.js', 'resources/sass/app.scss'])
-    </head>
-    @include('components.alert')
-    <body class="d-flex align-items-center py-4 bg-body-tertiary">
+</head>
+    <body>
+        <header>
+            @include('layouts.navigation')
+            @include('components.alert')
+        </header>
+
         <!-- Page Content -->
         <main class="form-signin container-fluid m-auto">
             {{ $slot }}
